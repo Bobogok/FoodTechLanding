@@ -1,5 +1,6 @@
 const { src, dest, watch, parallel, series } = require('gulp');
 
+const ghPages = require('gulp-gh-pages');
 const sass = require('gulp-sass');
 const concat = require('gulp-concat');
 const browserSync = require('browser-sync').create();
@@ -16,8 +17,8 @@ function browsersync() {
   });
 }
 
-function cleanDist() {
-  return del('dist');
+function cleanBuild() {
+  return del('build');
 }
 
 function images() {
@@ -32,7 +33,7 @@ function images() {
         })
       ])
     )
-    .pipe(dest('dist/img'));
+    .pipe(dest('build/img'));
 }
 
 function scripts() {
@@ -59,7 +60,7 @@ function styles() {
 
 function build() {
   return src(['app/css/style.min.css', 'app/fonts/**/*', 'app/js/main.min.js', 'app/*.html'], { base: 'app' }).pipe(
-    dest('dist')
+    dest('build')
   );
 }
 
@@ -69,12 +70,18 @@ function watching() {
   watch(['app/*.html']).on('change', browserSync.reload);
 }
 
+function deploy() {
+  return src('./build/**/*').pipe(ghPages());
+}
+
 exports.styles = styles;
 exports.watching = watching;
 exports.browsersync = browsersync;
 exports.scripts = scripts;
 exports.images = images;
-exports.cleanDist = cleanDist;
+exports.cleanBuild = cleanBuild;
+exports.deploy = deploy;
 
-exports.build = series(cleanDist, images, build);
+exports.build = series(cleanBuild, images, build);
 exports.default = parallel(browsersync, watching, scripts, styles);
+exports.deploy = series(deploy);
