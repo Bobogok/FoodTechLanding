@@ -3,7 +3,10 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "homepage": "https://Bobogok.github.io/FoodTechLanding",
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Ivan M",
@@ -19,6 +22,7 @@
     "node-sass": "^6.0.0"
   },
   "dependencies": {
-    "browser-sync": "^2.26.14"
+    "browser-sync": "^2.26.14",
+    "gh-pages": "^4.0.0"
   }
 }
