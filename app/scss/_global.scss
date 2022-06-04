@@ -16,6 +16,16 @@ body {
   & > .section:last-child {
     margin-bottom: 85px;
   }
+
+  @media (max-width: 440px) {
+    .section--colored {
+      background-color: transparent;
+    }
+
+    & > .section:last-child {
+      margin-bottom: 0px;
+    }
+  }
 }
 
 .footer {
