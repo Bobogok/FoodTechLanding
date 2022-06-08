@@ -1,22 +1,33 @@
 @media (max-width: 1365px) {
   .header {
+    padding: 26px 17px;
     &__logo-name {
       display: none;
     }
   }
 
+  .colored {
+    display: none;
+  }
+
   .section {
+    height: auto;
     margin-bottom: 0px;
     margin: 0 auto;
 
     &__content {
-      padding: 64px 16px;
+      padding: 0 17px;
+      padding-top: 64px;
     }
 
     &__title {
       margin: 0 auto;
+      line-height: 110%;
+      letter-spacing: 1px;
       font-size: 48px;
       margin-bottom: 24px;
+      display: flex;
+      flex-direction: column;
     }
 
     &__info {
@@ -27,6 +38,8 @@
 
     &__text {
       font-size: 20px;
+      line-height: 28px;
+      letter-spacing: -0.33px;
     }
 
     &__info-title {
@@ -37,7 +50,7 @@
     &__info-image {
       display: block;
       width: 100%;
-      margin: 0 auto 68px auto;
+      margin: 0 auto 85px auto;
 
       &--iphone {
         height: 400px;
@@ -76,12 +89,15 @@
       align-items: center;
       font-size: 32px;
       margin-bottom: 16px;
+      letter-spacing: 1px;
+      font-weight: 700;
     }
 
     &__info-second {
       font-size: 16px;
       text-align: center;
       margin-bottom: 24px;
+      line-height: 24px;
     }
 
     &__info-button {
@@ -103,7 +119,7 @@
     padding: 20px 16px;
 
     &__connections {
-      grid-template-columns: repeat(2, 50%);
+      grid-template-columns: repeat(2, 53%);
       // grid-column-gap: 40px;
       grid-row-gap: 20px;
     }

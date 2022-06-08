@@ -13,10 +13,11 @@
   left: 0;
   right: 0;
   background-color: transparent;
-  padding: 18px 24px;
+  padding: 15px 24px;
 
   &__content {
     display: flex;
+    align-items: center;
     justify-content: space-between;
   }
 
@@ -25,12 +26,11 @@
   }
 
   &__logo-icon {
-    width: 28px;
-    height: 28px;
     background: {
       image: url('../img/icons/Logo.svg');
+      size: 28px 28px;
     }
-    margin-right: 8px;
+    margin-right: 5px;
   }
 
   &__logo-name {
@@ -39,7 +39,8 @@
       size: 24px;
       weight: 700;
     }
-    line-height: 32px;
+    line-height: 29px;
+    letter-spacing: -0.47px;
   }
 
   &__menu-wrapper {
@@ -47,11 +48,16 @@
   }
 
   &__toWrite {
+    width: 124px;
+    height: 30px;
     border-radius: 8px;
-    padding: 6px 12px;
+    // padding: 6px 12px;
     color: $textOnColor;
     background-color: $bgPrimary;
     margin-right: 24px;
+    line-height: 20px;
+    letter-spacing: 0.3px;
+    font-weight: 600;
   }
 
   &__changeLang {
@@ -59,17 +65,23 @@
   }
 }
 
-.section {
-  margin-bottom: 120px;
+.colored {
+  background-color: $bgSecondary;
+  height: 600px;
+  width: 100vw;
+  position: absolute;
 
-  &--colored {
-    background-color: $bgSecondary;
-  }
+}
+
+.section {
+  // margin-bottom: 120px;
+  height: 720px;
+  position: relative;
 
   &__content {
     position: relative;
-    padding-top: 144px;
-    padding-bottom: 144px;
+    padding-top: 141px;
+    padding-bottom: 154px;
     margin: 0 auto;
   }
 
@@ -88,12 +100,17 @@
 
   &__text {
     font-size: 24px;
-    font-weight: 300;
+    font-weight: 400;
     line-height: 36px;
     color: $textSecondary;
     display: flex;
     flex-direction: column;
     max-width: 710px;
+    // letter-spacing: 0.15px;
+
+    // span:first-child {
+    //   letter-spacing: 0.33px;
+    // }
   }
 
   &__info {
@@ -107,6 +124,7 @@
     color: $title;
     opacity: $opacity;
     margin-bottom: 48px;
+    letter-spacing: 1px;
   }
 
   &__info-image {
@@ -114,10 +132,12 @@
   }
 
   &__info-main {
-    font-weight: 400;
+    font-weight: 500;
     font-size: 48px;
     line-height: 120%;
     margin-bottom: 32px;
+    letter-spacing: 1px;
+    max-width: 604px;
   }
 
   &__info-colored-word {
@@ -136,29 +156,34 @@
 
   &__info-second {
     font-size: 20px;
-    font-weight: 300;
+    font-weight: 400;
     line-height: 28px;
     color: $textSecondary;
+    // letter-spacing: -0.23px;
     letter-spacing: -0.33px;
     margin-bottom: 40px;
     max-width: 550px;
   }
 
   &__info-button {
-    padding: 6px 12px;
+    width: 118px;
+    height: 32px;
+    // padding: 6px 12px;
     background-color: $bgButtonSecondary;
     border-radius: 4px;
     color: $textSecondary;
-    font-weight: 400;
+    font-weight: 500;
     line-height: 20px;
+    letter-spacing: -0.09px;
+    font-size: 14px;
   }
 
   &__image {
     position: absolute;
 
     &--iphone {
-      top: 64px;
-      right: 129px;
+      top: 62px;
+      right: 136px;
       width: 290px;
       height: 588px;
       background: {
@@ -169,8 +194,8 @@
     }
 
     &--samsung {
-      top: 64px;
-      right: 140px;
+      top: 61px;
+      right: 147px;
       width: 268px;
       height: 588px;
       background: {
@@ -181,8 +206,8 @@
     }
 
     &--macbook {
-      top: 303px;
-      right: 26px;
+      top: 302px;
+      right: 34px;
       width: 600px;
       height: 349px;
       background: {
@@ -195,8 +220,13 @@
 }
 
 .footer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
   background-color: #ffffff;
-  padding: 20px 24px;
+  padding: 20px 16px;
   max-width: 1280px;
   margin: 0 auto;
 
@@ -254,6 +284,7 @@
     letter-spacing: -0.18px;
     color: $textTertiary;
     text-align: right;
+    margin-right: 15px;
   }
 }
 
